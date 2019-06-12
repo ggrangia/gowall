@@ -28,6 +28,14 @@ Here the list of available functions:
 - Some(int, ...Brick)
 - Race(...Brick)
 
+
+For each of the above functions, there are also "timed" versions. They have the same behaviour but they halts when the timer expires, cancelling any still running goroutines.
+
+- AllTimed(time.Duration, ...Brick)
+- AllSettledTimed(time.Duration, ...Brick)
+- SomeTimed(time.Duration, int, ...Brick)
+- RaceTimed(time.Duration, ...Brick)
+
 ## All
 Receives a set of functions and return a slice containing the returning values from settled functions and a boolean indicating if every function succedeed.
 If any error occurs, only the error is returned and the state is set to false.
@@ -41,11 +49,15 @@ Receives a set of functions and return a slice containing the returning values f
 func AllSettled(funcs ...Brick) []Response
 ```
 
+## Some
+Receives the number of functions (as integer) you want to wait for and a set of functions. Some returns a slice with the first functions that settled (or all the functions if the passed integer is higher than the number of functions).
+```golang
+func Some(funcs ...Brick) []Response
+```
 
+## Race
+Receives a set of functions and return the first one that settles, independently if an error occured or not.
+```golang
+func Race(funcs ...Brick) Response
+```
 
-For each of the above functions, there are also "timed" versions. They have the same behaviour but they halts when the timer expires, cancelling any still running goroutines.
-
-- AllTimed(time.Duration, ...Brick)
-- AllSettledTimed(time.Duration, ...Brick)
-- SomeTimed(time.Duration, int, ...Brick)
-- RaceTimed(time.Duration, ...Brick)
