@@ -22,14 +22,26 @@ type Response struct {
 }
 ```
 If a Brick panics, it is recovered and the field Err is populated.
-
-## All
-Receives a set of functions and return a slice 
-
+Here the list of available functions:
 - All(...Brick)
 - AllSettled(...Brick)
 - Some(int, ...Brick)
 - Race(...Brick)
+
+## All
+Receives a set of functions and return a slice containing the returning values from settled functions and a boolean indicating if every function succedeed.
+If any error occurs, only the error is returned and the state is set to false.
+```golang
+func All(funcs ...Brick) ([]Response, bool)
+```
+
+## AllSettled
+Receives a set of functions and return a slice containing the returning values from settled functions. Differently from All, it does not halt when an error occurs.
+```golang
+func AllSettled(funcs ...Brick) []Response
+```
+
+
 
 For each of the above functions, there are also "timed" versions. They have the same behaviour but they halts when the timer expires, cancelling any still running goroutines.
 
