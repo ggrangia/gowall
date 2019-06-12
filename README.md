@@ -1,7 +1,7 @@
 # gowall
 
 Simple package to synnchronize your goroutines and collect the results.<br>
-Loosely inspired by Promise.all() et similia
+Inspired by Promise.all() et similia
 # Installation
 ```
 go get github.com/GiacomoGrangia/gowall
@@ -40,24 +40,40 @@ For each of the above functions, there are also "timed" versions. They have the 
 Receives a set of functions and return a slice containing the returning values from settled functions and a boolean indicating if every function succedeed.
 If any error occurs, only the error is returned and the state is set to false.
 ```golang
-func All(funcs ...Brick) ([]Response, bool)
+func All(...Brick) ([]Response, bool)
 ```
 
 ## AllSettled
 Receives a set of functions and return a slice containing the returning values from settled functions. Differently from All, it does not halt when an error occurs.
 ```golang
-func AllSettled(funcs ...Brick) []Response
+func AllSettled(...Brick) []Response
 ```
 
 ## Some
 Receives the number of functions (as integer) you want to wait for and a set of functions. Some returns a slice with the first functions that settled (or all the functions if the passed integer is higher than the number of functions).
 ```golang
-func Some(funcs ...Brick) []Response
+func Some(int, ...Brick) []Response
 ```
 
 ## Race
 Receives a set of functions and return the first one that settles, independently if an error occured or not.
 ```golang
-func Race(funcs ...Brick) Response
+func Race(...Brick) Response
+```
+
+## Timed functions
+All the timed functions receive an additional parameter that is the timeout (in milliseconds).
+All the functions returns additionaly a boolean that indicates if the timeout has expired, killing some running goroutines.
+```golang
+func AllTimed(time.Duration, ...Brick) ([]Response, bool)
+```
+```golang
+func AllSettledTimed(time.Duration, ...Brick) ([]Response, bool)
+```
+```golang
+func SomeTimed(time.Duration, int, ...Brick) ([]Response, bool)
+```
+```golang
+func RaceTimed(time.Duration,...Brick) (Response, bool)
 ```
 
