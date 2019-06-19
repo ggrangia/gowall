@@ -1,6 +1,6 @@
 # gowall
 
-Simple package to synnchronize your goroutines and collect the results.<br>
+Simple package to synchronize your goroutines and collect the results.<br>
 Inspired by Promise.all() et similia
 # Installation
 ```
