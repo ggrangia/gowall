@@ -21,7 +21,7 @@ type Response struct {
 	Err  error
 }
 ```
-If a Brick panics, it is recovered and the field Err is populated.
+If a Brick panics, it is recovered and the field Err is populated.<br>
 Here the list of available functions:
 - All(...Brick)
 - AllSettled(...Brick)
