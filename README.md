@@ -14,7 +14,7 @@ The basic element (function) to be passed is of type Brick.
 ``` golang
 type Brick func() (interface{}, error)
 ```
-Any functions will return a slice (or a single element) of type Response.
+Any function will return a slice (or a single element) of type Response.
 ```golang
 type Response struct {
 	Resp interface{}
