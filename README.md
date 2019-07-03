@@ -76,4 +76,29 @@ func SomeTimed(time.Duration, int, ...Brick) ([]Response, bool)
 ```golang
 func RaceTimed(time.Duration,...Brick) (Response, bool)
 ```
+# Examples
+Get the content of two http API calls, but stop after 5 seconds.
+```golang
+var urls = []string{"http://swapi.co/api/planets/9", "http://swapi.co/api/people/9"}
 
+func httpGet(url string) (interface{}, error) {
+	resp, err := http.Get(url)
+	if err != nil {
+		fmt.Println(err)
+		return nil, err
+	}
+	defer resp.Body.Close()
+	bytes, err := ioutil.ReadAll(resp.Body)
+	return string(bytes), err
+}
+
+requests := []Brick{}
+for u := range url {
+		myurl := u
+		httpf = append(httpf, func() (interface{}, error) {
+			return httpGet(myurl)
+		})
+	}
+res, isCompleted := AllSettledTimed(5000, requests...)
+
+```
