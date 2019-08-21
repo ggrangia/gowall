@@ -63,7 +63,7 @@ func Race(...Brick) Response
 
 ## Timed functions
 All the timed functions receive an additional parameter that is the timeout (in milliseconds).
-All the functions returns additionaly a boolean that indicates if the timeout has expired, killing the running goroutines.
+All the functions returns an additional boolean that indicates if the timeout has expired, killing the running goroutines.
 ```golang
 func AllTimed(time.Duration, ...Brick) ([]Response, bool)
 ```
