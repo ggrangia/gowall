@@ -50,7 +50,7 @@ func AllSettled(...Brick) []Response
 ```
 
 ## Some
-Receives the number of functions (as integer) you want to wait for and a set of functions. Some returns a slice with the first functions that settled (or all the functions if the passed integer is higher than the number of functions).
+Receives the number of functions (as integer) you want to wait for and a set of functions. Some returns a slice with the first functions that settles (or all the functions if the passed integer is higher than the number of functions).
 ```golang
 func Some(int, ...Brick) []Response
 ```
