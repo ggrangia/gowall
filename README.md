@@ -23,18 +23,18 @@ type Response struct {
 ```
 If a Brick panics, it is recovered and the field Err is populated.<br>
 Here the list of available functions:
--  <a href="#all"><b>All</b></a>
-- AllSettled(...Brick)
-- Some(int, ...Brick)
-- Race(...Brick)
+- <a href="#all"><b>All</b></a>
+- <a href="#allsettled"><b>AllSettled</b></a>
+- <a href="#some"><b>Some</b></a>
+- <a href="#race"><b>Race</b></a>
 
 
 For each of the above functions, there are also "timed" versions. They have the same behaviour but they halts when the timer expires, cancelling any still running goroutines.
 
-- AllTimed(time.Duration, ...Brick)
-- AllSettledTimed(time.Duration, ...Brick)
-- SomeTimed(time.Duration, int, ...Brick)
-- RaceTimed(time.Duration, ...Brick)
+- <a href="#alltimed"><b>AllTTimed</b></a>
+- <a href="#allsettledtimed"><b>AllSettledTimed</b></a>
+- <a href="#sometimed"><b>SomeTimed</b></a>
+- <a href="#racetimed"><b>RaceTimed</b></a>
 
 ## All
 Receives a set of functions and return a slice containing the returning values from settled functions and a boolean indicating if every function succedeed.
