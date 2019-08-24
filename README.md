@@ -31,10 +31,10 @@ Here the list of available functions:
 
 For each of the above functions, there are also "timed" versions. They have the same behaviour but they halts when the timer expires, cancelling any still running goroutines.
 
-- <a href="#alltimed"><b>AllTTimed</b></a>
-- <a href="#allsettledtimed"><b>AllSettledTimed</b></a>
-- <a href="#sometimed"><b>SomeTimed</b></a>
-- <a href="#racetimed"><b>RaceTimed</b></a>
+- <a href="#timed-functions"><b>AllTimed</b></a>
+- <a href="#timed-functions"><b>AllSettledTimed</b></a>
+- <a href="#timed-functions"><b>SomeTimed</b></a>
+- <a href="#timed-functions"><b>RaceTimed</b></a>
 
 ## All
 Receives a set of functions and return a slice containing the returning values from settled functions and a boolean indicating if every function succedeed.
