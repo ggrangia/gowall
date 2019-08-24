@@ -79,6 +79,11 @@ func RaceTimed(time.Duration,...Brick) (Response, bool)
 # Examples
 Get the content of two http API calls, but stop after 5 seconds.
 ```golang
+import (
+	// other imports
+	"github.com/GiacomoGrangia/gowall"
+)
+
 var urls = []string{"http://swapi.co/api/planets/9", "http://swapi.co/api/people/9"}
 
 func httpGet(url string) (interface{}, error) {
@@ -99,7 +104,7 @@ for u := range url {
 			return httpGet(myurl)
 		})
 	}
-res, isCompleted := AllSettledTimed(5000, requests...)
+res, isCompleted := wall.AllSettledTimed(5000, requests...)
 
 ```
 # Contributing
