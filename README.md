@@ -23,7 +23,7 @@ type Response struct {
 ```
 If a Brick panics, it is recovered and the field Err is populated.<br>
 Here the list of available functions:
--  <a href="##All"><b>All</b></a>
+-  <a href="#all"><b>All</b></a>
 - AllSettled(...Brick)
 - Some(int, ...Brick)
 - Race(...Brick)
