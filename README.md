@@ -102,4 +102,5 @@ for u := range url {
 res, isCompleted := AllSettledTimed(5000, requests...)
 
 ```
-Any help is appreciated! IF you see something wrong, do hesitate to make a pull request! Thank you in advance.
+# Contributing
+Any help is appreciated! If you see something wrong or you have an improvement, do not hesitate to make a pull request! Thank you in advance.
