@@ -97,7 +97,7 @@ func httpGet(url string) (interface{}, error) {
 	return string(bytes), err
 }
 
-requests := []Brick{}
+requests := []wall.Brick{}
 for u := range url {
 		myurl := u
 		httpf = append(httpf, func() (interface{}, error) {
