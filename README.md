@@ -81,7 +81,7 @@ Get the content of two http API calls, but stop after 5 seconds.
 ```golang
 import (
 	// other imports
-	"github.com/GiacomoGrangia/gowall"
+	"github.com/ggrangia/gowall"
 )
 
 var urls = []string{"http://swapi.co/api/planets/9", "http://swapi.co/api/people/9"}
