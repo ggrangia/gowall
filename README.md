@@ -4,7 +4,7 @@ Simple package to synchronize your goroutines and collect the results.<br>
 Inspired by Promise.all() et similia
 # Installation
 ```
-go get github.com/GiacomoGrangia/gowall
+go get github.com/ggrangia/gowall
 ```
 
 # Features
